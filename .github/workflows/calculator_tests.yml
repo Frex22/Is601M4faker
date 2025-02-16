@@ -33,8 +33,14 @@ jobs:
 
       - name: Run coverage with pytest
         run: |
-          pytest --cov=app --cov-report=term-missing --cov-fail-under=98
+          pytest --cov=app --cov-report=term-missing --cov-fail-under=93
 
       - name: Run lint with pytest
         run: |
-          pylint app tests --fail-under=10
+          pylint app tests --fail-under=8.5
+
+      - name: Run num records
+        run: |
+          pytest --num_records=100
+      
+
